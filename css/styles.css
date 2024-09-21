@@ -1299,6 +1299,7 @@ h3,
 .h3 {
 	font-size  : var(--text-xl);
 	line-height: calc(1.125 * var(--space));
+	letter-spacing: -0.012em;
 }
 
 h4,
@@ -4743,6 +4744,12 @@ td:last-child {
 
 .projects-section {
 	padding: var(--vspace-2);
+	color: var(--color-3);
+	background-color: var(--color-2-dark);
+  }
+
+  .projects-section .text-display-title {
+	color: var(--color-3); 
   }
   
   .project-card {
@@ -4757,8 +4764,9 @@ td:last-child {
   
   .project-image {
 	width: 100%;
+	height: 240px; /* Set a fixed height */
+	object-fit: cover; /* Ensures the image fits the box while maintaining aspect ratio */
 	border-radius: var(--border-radius);
-	margin-bottom: var(--vspace-1);
   }
   
   .project-card h3 {
@@ -4770,5 +4778,100 @@ td:last-child {
 	font-size: var(--text-md);
 	color: var(--color-text-light);
 	margin-bottom: var(--vspace-1_5);
+  }
+  
+
+
+  .contact-section .text-display-title{
+	color: var(--color-gray-1);
+  }
+  .contact-section .mc-status{
+	color: var(--color-1);
+  }
+  .contact-section {
+	padding: var(--vspace-4) 0;
+	background-color: #181818;
+  }
+  
+  .contact-info {
+	list-style: none;
+	padding: 0;
+  }
+  
+  .contact-info li {
+	margin-bottom: var(--vspace-1);
+  }
+  
+  .contact-info a {
+	font-size: var(--text-md);
+	color: var(--color-link);
+	text-decoration: none;
+	display: flex;
+	align-items: center;
+	transition: color 0.3s ease;
+  }
+  
+  .contact-info a:hover {
+	color: var(--color-link-hover);
+  }
+  
+  /* Icon styles */
+  .contact-info .icon-email::before {
+	content: url('/images/icons/envelope-solid.svg');
+	margin-right: var(--vspace-0_5);
+  }
+  
+  .contact-info .icon-linkedin::before {
+	content: url('/images/icons/icon-linkedin.svg');
+	margin-right: var(--vspace-0_5);
+  }
+  
+  .contact-info .icon-github::before {
+	content: url('/images/icons/icons8-github.svg');
+	margin-right: var(--vspace-0_5);
+  }
+  
+  .contact-info .icon-resume::before {
+	content: url('images/icons/icons8-document.svg');
+	margin-right: var(--vspace-0_5);
+  }
+
+  .tooltip {
+	position: relative;
+	display: inline-block;
+	cursor: pointer;
+  }
+  
+  .tooltip .tooltip-text {
+	visibility: hidden;
+	background-color: var(--color-black);
+	color: var(--color-white);
+	text-align: center;
+	padding: 8px;
+	border-radius: 5px;
+	position: absolute;
+	z-index: 1;
+	bottom: 125%; /* Position the tooltip above the icon */
+	left: 50%;
+	transform: translateX(-50%);
+	opacity: 0;
+	transition: opacity 0.3s;
+	white-space: nowrap;
+  }
+  
+  .tooltip .tooltip-text::after {
+	content: "";
+	position: absolute;
+	top: 100%; /* Arrow pointing downwards */
+	left: 50%;
+	margin-left: -5px;
+	border-width: 5px;
+	border-style: solid;
+	border-color: var(--color-black) transparent transparent transparent;
+  }
+  
+  .tooltip:hover .tooltip-text {
+	visibility: visible;
+	opacity: 1;
   }
   
